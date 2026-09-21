@@ -1,4 +1,5 @@
 % Erik Sinkevic EDif/02 2026-09-21
+%https://github.com/panthare1/laboras
 
 x = 1:32;
 y=x.^2;
