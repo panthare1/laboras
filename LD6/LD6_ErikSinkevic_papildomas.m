@@ -14,3 +14,4 @@ function varargout = specfunkc(varargin)
         error('Reikia 1 arba 2 ivesties kintamuju.');
     end
 end
+
