@@ -6,9 +6,6 @@
 
 | Kur | Ką daryti |
 |---|---|
-| `assets/img/portfolio/*.png` | Grafikai atkurti pagal jūsų LD3 ir LD4 .m failus. Geriausia juos pakeisti tikrais MATLAB eksportais (Figure → File → Save As → PNG), išsaugant tais pačiais pavadinimais |
-| `assets/media/klaviatura.mp4` | Atsisiųskite vaizdo įrašą iš https://www.pexels.com/video/person-is-typing-using-computer-keyboard-7534244/ ir išsaugokite šiuo pavadinimu |
-| `assets/media/laikrodis.mp3` | Atsisiųskite garso įrašą iš https://pixabay.com/sound-effects/quartz-clock-ticking-one-minute-253102/ ir išsaugokite šiuo pavadinimu |
 | `index.html` | Patikrinkite studijų programos pavadinimą, NVIDIA kurso metus (dabar „Baigtas kursas“), įgūdžių procentus ir paslaugų kainas |
 | `assets/img/avatar-lygis-1…4.svg` | Jei reikalaujama, sugeneruokite ikonėles su https://avataaars2.com/ ir išsaugokite tais pačiais pavadinimais |
 
