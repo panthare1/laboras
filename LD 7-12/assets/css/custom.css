@@ -1,0 +1,1494 @@
+/*==============================================================
+  custom.css – Erik Adam Sinkevič CV
+  Įkeliamas po main.css, todėl perrašo šablono taisykles.
+
+  Dizaino idėja: svetainė primena tvarkingai nubraižytą inžinerinį
+  grafiką. Milimetrinis popierius, rašalo mėlyna, grafiko linijos
+  mėlyna ir oranžinis „duomenų taškas“, naudojamas tik žymekliams.
+
+  Turinys:
+    LD9  – šriftai, mygtukai, nuorodos, tarpai, blokai, komponentai
+    LD9  (papildoma) – sąrašai ir lentelė
+    LD10 – @keyframes animacijos, krovimo indikatorius, pseudo-elementai
+    LD10 (papildoma) – gradientinis fonas, CSS figūros
+    LD11 – kontaktų forma
+    LD12 – kompetencijų pažangos modulis
+==============================================================*/
+
+/*--------------------------------------------------------------
+  Spalvos ir šriftai
+--------------------------------------------------------------*/
+:root {
+  /* paletė */
+  --paper: #f3f6f9;      /* milimetrinio popieriaus fonas */
+  --grid: #d8e2ec;       /* tinklelio ir rėmelių linijos */
+  --ink: #14233b;        /* pagrindinis tekstas – kontrastas su popieriumi ~14:1 */
+  --plot: #1d5fbf;       /* grafiko linija, nuorodos, mygtukai – su baltu ~6:1 */
+  --marker: #d95319;     /* duomenų taškas – tik žymekliams, ne tekstui */
+  --muted: #56677d;      /* antrinis tekstas – ~5.5:1 */
+  --surface: #ffffff;
+
+  /* šablono kintamieji */
+  --background-color: var(--paper);
+  --default-color: var(--ink);
+  --heading-color: var(--ink);
+  --accent-color: var(--plot);
+  --surface-color: var(--surface);
+  --nav-color: var(--ink);
+  --nav-hover-color: var(--plot);
+
+  /* šriftas: viena šeima, keičiamas plotis (wdth) */
+  --default-font: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --heading-font: "Archivo", system-ui, sans-serif;
+  --nav-font: "Archivo", system-ui, sans-serif;
+
+  --r-lg: 10px;          /* dideli skydai */
+  --r-sm: 4px;           /* mažos detalės */
+  --hard-shadow: 4px 4px 0 rgba(20, 35, 59, .12);
+}
+
+.light-background {
+  --background-color: var(--paper);
+  --surface-color: var(--surface);
+}
+
+body {
+  background: var(--paper);
+}
+
+.section {
+  background-color: var(--paper);
+}
+
+.about, .resume, .progress-module {
+  background-color: var(--surface);
+}
+
+/*==============================================================
+  LD9.2 – Tipografija
+==============================================================*/
+body {
+  font-family: var(--default-font);
+  font-size: 17px;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+
+/* Antraštės – platesnis šrifto plotis, kad veiktų kaip „grafiko pavadinimas“ */
+h1 { font-size: 3.4rem;  font-weight: 800; font-stretch: 125%; }
+h2 { font-size: 2.4rem;  font-weight: 800; font-stretch: 125%; }
+h3 { font-size: 1.45rem; font-weight: 700; font-stretch: 112%; }
+h4 { font-size: 1.12rem; font-weight: 700; font-stretch: 100%; }
+h5 { font-size: .95rem;  font-weight: 600; font-stretch: 100%; color: var(--plot); }
+h6 { font-size: .9rem;   font-weight: 600; color: var(--muted); }
+
+p {
+  max-width: 68ch;                /* eilutė iki ~70 simbolių */
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #2a3a52;
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.fst-italic {
+  font-style: normal !important;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--ink);
+  font-stretch: 105%;
+}
+
+/* Hero: vardas – pagrindinis puslapio akcentas */
+.hero h2 {
+  font-size: clamp(2.6rem, 5.2vw, 5.6rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: -.03em;
+  line-height: .95;
+  color: var(--ink);
+  max-width: 9.5em;
+}
+
+.hero p {
+  margin-top: 22px;
+  font-size: 1.45rem;
+  font-weight: 500;
+  font-stretch: 100%;
+  color: var(--ink);
+}
+
+.hero p span {
+  border-bottom: 3px solid var(--plot);
+}
+
+/*==============================================================
+  LD9.3 – Nuorodos ir mygtukai
+==============================================================*/
+a {
+  color: var(--plot);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color .2s, text-decoration-thickness .2s;
+}
+
+a:hover {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.portfolio-filters li:focus-visible {
+  outline: 3px solid var(--marker);
+  outline-offset: 3px;
+}
+
+.navmenu a, .social-links a, .portfolio-info a, .scroll-top, .credits a {
+  text-decoration: none;
+}
+
+/* Pagrindinis mygtukas */
+.contact-form button,
+.progress-module button {
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  font-weight: 700;
+  font-stretch: 110%;
+  color: #fff;
+  background: var(--plot);
+  border: 2px solid var(--plot);
+  border-radius: var(--r-sm);
+  padding: 11px 30px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: background-color .15s, box-shadow .15s, transform .15s;
+  cursor: pointer;
+}
+
+.contact-form button:hover,
+.progress-module button:hover {
+  background: #174d9c;
+  border-color: #174d9c;
+  box-shadow: 5px 5px 0 var(--ink);
+  transform: translate(-2px, -2px);
+}
+
+.contact-form button:active,
+.progress-module button:active {
+  box-shadow: 0 0 0 var(--ink);
+  transform: translate(3px, 3px);
+}
+
+.contact-form button:disabled,
+.contact-form button:disabled:hover {
+  color: var(--muted);
+  background: #e4eaf1;
+  border-color: #c3cfdc;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Antrinis mygtukas */
+.contact-form .btn-outline,
+.progress-module .btn-outline {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--ink);
+}
+
+.contact-form .btn-outline:hover,
+.progress-module .btn-outline:hover {
+  color: var(--ink);
+  background: var(--paper);
+  border-color: var(--ink);
+}
+
+.contact-form .btn-outline:active,
+.progress-module .btn-outline:active {
+  background: var(--grid);
+}
+
+/*==============================================================
+  LD9.4 – Tarpai ir turinio blokai
+==============================================================*/
+.section {
+  padding: 96px 0;
+}
+
+/* Skilčių antraštės lygiuojamos kairėje, kaip grafiko ašis */
+.section-title {
+  text-align: left;
+  padding-bottom: 44px;
+}
+
+.section-title h2 {
+  display: block;
+  margin-bottom: 14px;
+  padding: 0 0 22px;
+}
+
+/* „Apie“ */
+.about .row.gy-4 {
+  align-items: center;
+  --bs-gutter-x: 56px;
+}
+
+.about .content {
+  padding: 8px 0 0;
+}
+
+.about .content h2 {
+  font-size: 1.7rem;
+  font-stretch: 112%;
+  font-weight: 700;
+  max-width: 22em;
+}
+
+.about .content ul {
+  margin: 8px 0 0;
+}
+
+.about .content ul li {
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--grid);
+}
+
+.about .content ul i {
+  color: var(--marker);
+}
+
+.about .about-img {
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+  box-shadow: var(--hard-shadow);
+}
+
+/* „Patirtis“ */
+.resume .row {
+  --bs-gutter-x: 56px;
+}
+
+.resume .resume-title {
+  margin: 36px 0 18px;
+  font-size: 1.3rem;
+}
+
+.resume .resume-title:first-child {
+  margin-top: 0;
+}
+
+.resume .resume-item {
+  padding: 0 0 24px 28px;
+  margin: 0 0 24px;
+  border-left: 2px solid var(--grid);
+}
+
+.resume .resume-item::before {
+  left: -8px;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--plot);
+  background: var(--surface);
+  border-radius: 50%;
+}
+
+.resume .resume-item h4 {
+  font-size: 1.12rem;
+  text-transform: none;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.resume .resume-item h5 {
+  display: inline-block;
+  background: none;
+  padding: 0;
+  margin: 2px 0 8px;
+  font-size: .95rem;
+  color: var(--plot);
+}
+
+.resume .resume-item p em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* „Atlikti darbai“ */
+.portfolio .portfolio-filters {
+  text-align: left;
+  margin-bottom: 28px;
+  padding: 0;
+}
+
+.portfolio .portfolio-filters li {
+  font-family: var(--heading-font);
+  font-size: .95rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  margin: 0 8px 8px 0;
+  border: 1px solid var(--grid);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: #fff;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.portfolio .portfolio-item {
+  padding-bottom: 8px;
+}
+
+.portfolio .portfolio-item img {
+  width: 100%;
+  background: #fff;
+  padding: 14px;
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+  background: none;
+  padding: 14px 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 12px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 1.05rem;
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  flex-basis: 100%;
+  order: 3;
+  padding: 0;
+  margin: 2px 0 0;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link {
+  position: static;
+  order: 2;
+  margin-left: auto;
+  font-size: 1.1rem;
+  color: var(--plot);
+}
+
+/* „Paslaugos“ */
+.services .service-item {
+  text-align: left;
+  padding: 28px 28px 22px;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+  box-shadow: none;
+}
+
+.services .service-item .icon {
+  margin: 0 0 16px;
+  width: 56px;
+  height: 56px;
+}
+
+.services .service-item .icon svg {
+  display: none;
+}
+
+.services .service-item .icon i,
+.services .service-item.item-cyan i,
+.services .service-item.item-orange i,
+.services .service-item.item-teal i {
+  position: static;
+  font-size: 1.6rem;
+  color: var(--plot);
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--grid);
+  border-radius: var(--r-sm);
+  background: var(--paper);
+  line-height: 1;
+}
+
+.services .service-item:hover {
+  border-color: var(--plot);
+}
+
+.services .service-item:hover .icon i {
+  color: var(--plot) !important;
+}
+
+.services .service-item h3 {
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+}
+
+.services .service-item p {
+  font-size: .98rem;
+  margin: 0;
+}
+
+/* Kontaktai */
+.contact .info-item {
+  padding: 0 0 20px;
+  border-bottom: 1px solid var(--grid);
+}
+
+.contact .info-item+.info-item {
+  margin-top: 20px;
+}
+
+.contact .info-item i {
+  color: var(--plot);
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-sm);
+}
+
+.contact .info-item:hover i {
+  color: #fff;
+  background: var(--plot);
+  border-color: var(--plot);
+}
+
+/*==============================================================
+  LD9.5 – Komponentai
+  1) Navigacijos juosta  2) „Į viršų“ mygtukas  3) Progreso juostos
+==============================================================*/
+/* 1. Navigacijos juosta – siaura „įrankių juosta“ kairėje */
+.navmenu ul {
+  padding: 8px;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+  box-shadow: var(--hard-shadow);
+}
+
+.navmenu a,
+.navmenu a:focus {
+  height: 48px;
+  margin-bottom: 4px;
+  padding: 10px 14px;
+  color: var(--ink);
+  background: transparent;
+  border-radius: var(--r-sm);
+  font-weight: 600;
+}
+
+.navmenu li:last-child a {
+  margin-bottom: 0;
+}
+
+.navmenu a:hover,
+.navmenu li:hover>a {
+  color: #fff;
+  background: var(--plot);
+}
+
+.navmenu .active,
+.navmenu .active:focus {
+  color: #fff;
+  background: var(--ink);
+  box-shadow: inset 3px 0 0 var(--marker);
+}
+
+@media (min-width: 992px) {
+  .navmenu a, .navmenu a:focus { max-width: 48px; }
+}
+
+/* 2. „Į viršų“ mygtukas */
+.scroll-top {
+  width: 46px;
+  height: 46px;
+  background: var(--ink);
+  border-radius: var(--r-sm);
+  border: 2px solid var(--surface);
+  box-shadow: 3px 3px 0 var(--marker);
+}
+
+.scroll-top:hover {
+  background: var(--plot);
+  box-shadow: 5px 5px 0 var(--marker);
+}
+
+/* 3. Progreso juostos („Įgūdžiai“) – plona ašis su žymekliu gale */
+.skills .progress {
+  height: auto;
+  padding: 0 0 6px;
+  margin-bottom: 26px;
+  background: none;
+}
+
+.skills .progress .skill {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  text-transform: none;
+}
+
+.skills .progress .skill .val {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.skills .progress-bar-wrap {
+  height: 4px;
+  margin-top: 8px;
+  background: var(--grid);
+  border-radius: 2px;
+  overflow: visible;
+}
+
+.skills .progress-bar {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--plot);
+  overflow: visible;
+}
+
+.skills .progress-bar::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--marker);
+}
+
+/*==============================================================
+  LD9 papildoma – Sąrašai (pseudo-elementai ir skaitikliai)
+==============================================================*/
+.tech-list,
+.steps-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.tech-list > li,
+.steps-list > li {
+  position: relative;
+  padding: 11px 0 11px 34px;
+  border-bottom: 1px solid var(--grid);
+}
+
+/* Nenumeruotas sąrašas – kvadratinis žymeklis (MATLAB 's'), sukurtas ::before */
+.tech-list > li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 19px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--plot);
+  background: var(--surface);
+}
+
+/* Numeruotas sąrašas – CSS skaitikliai */
+.steps-list {
+  counter-reset: step;
+}
+
+.steps-list > li {
+  counter-increment: step;
+  padding-left: 44px;
+}
+
+.steps-list > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-stretch: 120%;
+  color: #fff;
+  background: var(--ink);
+  border-radius: var(--r-sm);
+}
+
+/* Įdėtiniai sąrašai – mažesni, su apskritu žymekliu ir kitu skaitiklio formatu */
+.tech-list ul,
+.steps-list ol {
+  list-style: none;
+  counter-reset: sub;
+  margin: 8px 0 2px;
+  padding: 0 0 0 4px;
+}
+
+.tech-list ul li,
+.steps-list ol li {
+  position: relative;
+  padding: 3px 0 3px 24px;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.tech-list ul li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 11px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid var(--marker);
+}
+
+.steps-list ol li {
+  counter-increment: sub;
+  padding-left: 36px;
+}
+
+.steps-list ol li::before {
+  content: counter(step) "." counter(sub);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--plot);
+}
+
+/*==============================================================
+  LD9 papildoma – Lentelė
+==============================================================*/
+.price-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.price-table caption {
+  caption-side: bottom;
+  text-align: left;
+  font-size: .9rem;
+  color: var(--muted);
+  padding-top: 10px;
+}
+
+.price-table th,
+.price-table td {
+  padding: 14px 18px;          /* vienodi vidiniai tarpai */
+  text-align: center;          /* turinys centre */
+  vertical-align: middle;
+  border-bottom: 1px solid var(--grid);
+}
+
+.price-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.price-table thead th {        /* antraštinė eilutė */
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  font-stretch: 112%;
+  font-size: 1rem;
+  border-bottom: 3px solid var(--marker);
+}
+
+.price-table tbody tr:nth-child(even) {   /* „zebra“ */
+  background: var(--paper);
+}
+
+.price-table tbody tr {
+  transition: background-color .15s;
+}
+
+.price-table tbody tr:hover {             /* :hover */
+  background: #e3ecf8;
+}
+
+.price-table td:last-child {
+  font-weight: 700;
+  color: var(--plot);
+  white-space: nowrap;
+}
+
+/*==============================================================
+  „Paslaugų“ papildomi blokai ir medija
+==============================================================*/
+.services-block {
+  margin-top: 64px;
+}
+
+.services-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.media-card {
+  margin: 0;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+  height: 100%;
+}
+
+.media-card video,
+.media-card iframe {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-sm);
+  display: block;
+  background: var(--ink);
+}
+
+.media-card .ratio iframe {
+  height: 100%;
+}
+
+.media-card audio {
+  width: 100%;
+}
+
+.media-card figcaption {
+  margin-top: 10px;
+  font-size: .92rem;
+  color: var(--muted);
+}
+
+/*==============================================================
+  LD10.1 – Naujos @keyframes animacijos
+==============================================================*/
+/* (a) Socialinių tinklų ikonėlės: 4 būsenos (0/30/60/100 %),
+       keičiamos transform ir color savybės */
+@keyframes socialPing {
+  0%   { transform: translateY(0) scale(1);    color: var(--ink); }
+  30%  { transform: translateY(-6px) scale(1.1); color: var(--plot); }
+  60%  { transform: translateY(1px) scale(.96); color: var(--marker); }
+  100% { transform: translateY(0) scale(1);    color: var(--ink); }
+}
+
+.hero .social-links a,
+.footer .social-links a {
+  display: inline-block;
+  font-size: 22px;
+  color: var(--ink);
+  animation: socialPing 1.2s ease-in-out 1.4s 2 both;   /* 2 kartus po puslapio įkėlimo */
+}
+
+.hero .social-links a:nth-child(2), .footer .social-links a:nth-child(2) { animation-delay: 1.55s; }
+.hero .social-links a:nth-child(3), .footer .social-links a:nth-child(3) { animation-delay: 1.7s; }
+
+.hero .social-links a:hover,
+.footer .social-links a:hover {
+  color: var(--plot);
+}
+
+/* (b) Hero vardas: viena įžanginė animacija įkėlus puslapį */
+@keyframes nameIn {
+  0%   { opacity: 0; transform: translateY(18px); font-stretch: 100%; }
+  100% { opacity: 1; transform: none; font-stretch: 125%; }
+}
+
+.hero h2 {
+  animation: nameIn .9s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+/*==============================================================
+  LD10.2 – Krovimo indikatorius (Pulsing Dots), tik CSS
+  Keturi „duomenų taškai“, kurie užsidega paeiliui.
+==============================================================*/
+.services-loader {
+  display: flex;
+  gap: 10px;
+  margin: -20px 0 32px;
+}
+
+.services-loader span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--plot);
+  background: var(--surface);
+  animation: dotPulse 1.6s ease-in-out infinite;
+}
+
+.services-loader span:nth-child(2) { animation-delay: .2s; }
+.services-loader span:nth-child(3) { animation-delay: .4s; }
+.services-loader span:nth-child(4) { animation-delay: .6s; border-color: var(--marker); }
+
+@keyframes dotPulse {
+  0%, 70%, 100% { transform: scale(.8); background: var(--surface); }
+  35%           { transform: scale(1.25); background: currentColor; }
+}
+
+.services-loader span { color: var(--plot); }
+.services-loader span:nth-child(4) { color: var(--marker); }
+
+/*==============================================================
+  LD10.3 – Skilčių antraščių pseudo-elementai
+  ::before – x ašis, kuri nusibrėžia; ::after – taškas, keliaujantis ašimi
+==============================================================*/
+.section-title h2::before {
+  left: 0;
+  right: auto;
+  bottom: 0;
+  margin: 0;
+  width: min(100%, 420px);
+  height: 2px;
+  background: var(--ink);
+  transform-origin: left center;
+  animation: axisDraw 6s ease-in-out infinite;
+}
+
+.section-title h2::after {
+  left: 0;
+  right: auto;
+  bottom: -5px;
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--marker);
+  animation: pointTravel 6s ease-in-out infinite;
+}
+
+@keyframes axisDraw {
+  0%        { transform: scaleX(0); }
+  25%, 85%  { transform: scaleX(1); }
+  100%      { transform: scaleX(0); opacity: .4; }
+}
+
+@keyframes pointTravel {
+  0%        { transform: translateX(0); opacity: 0; }
+  10%       { opacity: 1; }
+  25%, 85%  { transform: translateX(min(80vw, 408px)); opacity: 1; }
+  100%      { transform: translateX(0); opacity: 0; }
+}
+
+/*==============================================================
+  LD10 papildoma 1 – Animuotas gradientinis „Paslaugų“ fonas
+==============================================================*/
+.services {
+  background: linear-gradient(115deg, #f3f6f9 0%, #e6eef8 35%, #f3f6f9 60%, #eaf2ee 100%);
+  background-size: 300% 300%;
+  animation: gradientMove 24s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/*==============================================================
+  LD10 papildoma 2 – CSS figūros „Apie“ skiltyje
+  MATLAB žymeklių formos: 'o', '^', 's', 'd'
+==============================================================*/
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  display: block;
+  opacity: .5;
+}
+
+.shape-circle {          /* 'o' – plaukioja aukštyn ir žemyn */
+  width: 34px;
+  height: 34px;
+  top: 12%;
+  right: 8%;
+  border-radius: 50%;
+  border: 3px solid var(--plot);
+  animation: shapeFloat 7s ease-in-out infinite;
+}
+
+.shape-triangle {        /* '^' – sukasi */
+  width: 0;
+  height: 0;
+  right: 4%;
+  bottom: 18%;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 31px solid var(--marker);
+  animation: shapeRotate 14s linear infinite;
+}
+
+.shape-square {          /* 's' – didėja ir mažėja */
+  width: 26px;
+  height: 26px;
+  top: 46%;
+  right: 2.5%;
+  border: 3px solid var(--ink);
+  animation: shapeScale 6s ease-in-out infinite;
+}
+
+.shape-diamond {         /* 'd' – plaukioja įstrižai */
+  width: 22px;
+  height: 22px;
+  left: 6%;
+  bottom: 12%;
+  background: var(--plot);
+  transform: rotate(45deg);
+  animation: shapeDrift 9s ease-in-out infinite;
+}
+
+@keyframes shapeFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-26px); }
+}
+
+@keyframes shapeRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes shapeScale {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.6); }
+}
+
+@keyframes shapeDrift {
+  0%, 100% { transform: translate(0, 0) rotate(45deg); }
+  50%      { transform: translate(22px, -30px) rotate(45deg); }
+}
+
+@media (max-width: 991px) {
+  .about-shapes { display: none; }
+}
+
+/* Mažiau judesio tiems, kas to pageidauja */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/*==============================================================
+  Hero foninis paveikslėlis
+==============================================================*/
+.hero:before {
+  background: linear-gradient(90deg, rgba(243, 246, 249, .92) 0%, rgba(243, 246, 249, .75) 40%, rgba(243, 246, 249, 0) 62%);
+}
+
+.hero img {
+  object-position: right center;
+}
+
+@media (max-width: 991px) {
+  .hero:before { background: rgba(243, 246, 249, .82); }
+}
+
+.hero .row {
+  justify-content: flex-start !important;
+}
+
+/* Kai navigacija dengia hero kairį kraštą (1200–1600 px), atitraukiame turinį */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .hero .container {
+    padding-left: 190px;
+  }
+}
+
+/*==============================================================
+  LD11 – Kontaktų forma
+==============================================================*/
+.contact-form {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+}
+
+.contact-form .form-label {
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.contact-form .form-control {
+  font-size: 1rem;
+  padding: 10px 13px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid #b6c4d4;
+  border-radius: var(--r-sm);
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--plot);
+  box-shadow: 0 0 0 3px rgba(29, 95, 191, .18);
+}
+
+.contact-form .form-control::placeholder {
+  color: #8796a8;
+}
+
+.contact-form .form-control.is-invalid {
+  border-color: #b42318;
+  border-width: 2px;
+  padding: 9px 12px;
+  background-color: #fff6f5;
+  box-shadow: none;
+}
+
+.contact-form .form-control.is-valid {
+  border-color: #2e7d4f;
+}
+
+.field-error {
+  display: block;
+  min-height: 1.25em;
+  margin-top: 4px;
+  font-size: .86rem;
+  color: #b42318;
+}
+
+.rating-group {
+  margin: 4px 0 0;
+  padding: 16px 0 0;
+  border: 0;
+  border-top: 1px solid var(--grid);
+}
+
+.rating-group legend {
+  float: none;
+  width: auto;
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-stretch: 112%;
+  color: var(--ink);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.form-buttons.text-center {
+  text-align: left !important;
+}
+
+.form-result {
+  margin-top: 24px;
+  padding: 22px 26px;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-left: 4px solid var(--plot);
+  border-radius: var(--r-lg);
+  animation: resultIn .3s ease-out;
+}
+
+.form-result h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.form-result p {
+  margin: 0 0 3px;
+  font-size: 1rem;
+}
+
+.form-result .form-average {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--grid);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.2rem;
+}
+
+@keyframes resultIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/*==============================================================
+  LD12 – Kompetencijų pažangos modulis
+==============================================================*/
+.pm-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 36px;
+  padding: 28px;
+  margin-bottom: 40px;
+  background: var(--paper);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-lg);
+}
+
+.pm-avatar-wrap {
+  flex: 0 0 auto;
+  width: 148px;
+  height: 148px;
+  padding: 4px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: var(--surface);
+}
+
+.pm-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+}
+
+.pm-avatar-wrap.level-up img {
+  animation: avatarPop .6s ease;
+}
+
+@keyframes avatarPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.pm-info {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.pm-badges,
+.pm-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.pm-badge,
+.pm-stats > div {
+  flex: 1 1 110px;
+  padding: 4px 18px;
+  border-left: 1px solid var(--grid);
+}
+
+.pm-badge:first-child,
+.pm-stats > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.pm-stats {
+  margin-top: 18px;
+}
+
+@media (max-width: 575px) {
+  .pm-badge,
+  .pm-stats > div {
+    flex: 1 1 45%;
+    padding: 6px 0;
+    border-left: 0;
+  }
+}
+
+.pm-label {
+  display: block;
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+.pm-badge strong {
+  font-size: 1.7rem;
+  font-weight: 800;
+  font-stretch: 118%;
+  color: var(--ink);
+}
+
+.pm-stats strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pm-progress {
+  margin-top: 18px;
+}
+
+.pm-progress-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: .92rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.pm-progress-track {
+  position: relative;
+  height: 10px;
+  background: var(--surface);
+  border: 1px solid #b6c4d4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.pm-progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--plot);
+  transition: width .5s ease;
+}
+
+.pm-progress-fill.is-max {
+  background: var(--marker);
+}
+
+/* Kanban lenta */
+.pm-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .pm-board { grid-template-columns: 1fr; }
+}
+
+.pm-column {
+  padding: 16px;
+  min-height: 220px;
+  background: var(--paper);
+  border: 1px solid var(--grid);
+  border-top: 4px solid var(--col-color);
+  border-radius: var(--r-sm) var(--r-sm) var(--r-lg) var(--r-lg);
+}
+
+.pm-column[data-status="Planuojama"] { --col-color: #56677d; }
+.pm-column[data-status="Mokomasi"]   { --col-color: #1d5fbf; }
+.pm-column[data-status="Atlikta"]    { --col-color: #2e7d4f; }
+
+.pm-column-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.pm-column-head h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.pm-count {
+  min-width: 28px;
+  padding: 1px 8px;
+  border-radius: var(--r-sm);
+  background: var(--col-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.pm-empty {
+  font-size: .95rem;
+  color: var(--muted);
+  padding: 18px 0;
+  margin: 0;
+}
+
+.pm-card {
+  padding: 13px 14px;
+  margin-bottom: 10px;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-sm);
+}
+
+.pm-card.just-moved {
+  animation: cardIn .35s ease-out;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); box-shadow: 0 0 0 2px var(--col-color); }
+  to   { opacity: 1; transform: none; box-shadow: 0 0 0 0 transparent; }
+}
+
+.pm-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.pm-card h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.pm-xp {
+  flex: 0 0 auto;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--col-color);
+}
+
+.pm-card-actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.progress-module .pm-card-actions button {
+  flex: 1;
+  padding: 5px 4px;
+  font-size: .78rem;
+  font-weight: 600;
+  font-stretch: 100%;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: var(--r-sm);
+  box-shadow: none;
+}
+
+.progress-module .pm-card-actions button:hover {
+  color: var(--ink);
+  background: var(--paper);
+  border-color: var(--ink);
+  box-shadow: none;
+  transform: none;
+}
+
+.progress-module .pm-card-actions button.is-current,
+.progress-module .pm-card-actions button.is-current:disabled {
+  color: #fff;
+  background: var(--col-color);
+  border-color: var(--col-color);
+  cursor: default;
+}
+
+/* Pasiekimai */
+.pm-subtitle {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.pm-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.pm-achievement {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px dashed #b6c4d4;
+  border-radius: var(--r-lg);
+  color: var(--muted);
+  transition: border-color .3s, background-color .3s;
+}
+
+.pm-achievement i {
+  font-size: 1.8rem;
+  color: #9aa8b8;
+}
+
+.pm-achievement h4 {
+  font-size: 1rem;
+  margin: 0 0 2px;
+  color: var(--muted);
+}
+
+.pm-achievement p {
+  font-size: .9rem;
+  margin: 0;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.pm-achievement .pm-state {
+  display: block;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.pm-achievement.unlocked {
+  border: 2px solid var(--marker);
+  background: #fff8f4;
+}
+
+.pm-achievement.unlocked i {
+  color: var(--marker);
+  animation: avatarPop .5s ease;
+}
+
+.pm-achievement.unlocked h4 {
+  color: var(--ink);
+}
+
+.pm-achievement.unlocked .pm-state {
+  color: #a63c0d;
+}
+
+.progress-module .text-center {
+  text-align: left !important;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  bottom: auto;
+}

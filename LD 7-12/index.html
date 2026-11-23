@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+  <!-- LD7 papildoma: koduotė, kalba, autorius, aprašymas, pavadinimas -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="author" content="Erik Adam Sinkevič">
+  <meta name="description" content="Erik Adam Sinkevič CV puslapis">
+  <meta name="keywords" content="CV, programinės įrangos inžinierius, dirbtinis intelektas, Python, C++">
+  <title>Mano CV</title>
+
+  <!-- Favicons (LD7 papildoma) -->
+  <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="assets/img/favicon.png" rel="icon" type="image/png">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- LD9: nauji šriftai (palaiko lietuviškas raides) -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- LD9: custom.css įkeliamas PO main.css, todėl jo taisyklės perrašo šablono stilius -->
+  <link href="assets/css/custom.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <!-- LD7: navigacijos meniu išverstas; LD12: pridėta skiltis „Pažanga“ -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Pagrindinis</span></a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i><span>Apie</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Patirtis</span></a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Atlikti darbai</span></a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Paslaugos</span></a></li>
+        <li><a href="#progress"><i class="bi bi-trophy navicon"></i><span>Pažanga</span></a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Kontaktai</span></a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section (LD7: vardas, profesija, paveikslėlis) -->
+    <section id="hero" class="hero section light-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="Milimetrinio popieriaus fone nubraižyta mažėjanti modelio mokymo nuostolių kreivė" width="1920" height="1080">
+
+      <div class="container" data-aos="zoom-out">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>Erik Adam Sinkevič</h2>
+            <p>Aš esu <span class="typed" data-typed-items="Programinės įrangos inžinierius, Dirbtinio intelekto sistemų studentas, Python programuotojas">Programinės įrangos inžinierius</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <a href="https://github.com/panthare1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/erik-adam-91425b404/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="mailto:erikadamsin@gmail.com" aria-label="El. paštas"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section (LD7: turinys; LD10 papildoma: animuotos CSS figūros) -->
+    <section id="about" class="about section">
+
+      <!-- LD10 papildoma: dekoratyvinės CSS figūros (tik dekoracija) -->
+      <div class="about-shapes" aria-hidden="true">
+        <span class="shape shape-circle"></span>
+        <span class="shape shape-triangle"></span>
+        <span class="shape shape-square"></span>
+        <span class="shape shape-diamond"></span>
+      </div>
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Apie</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/profile-img.jpg" class="img-fluid about-img" alt="Neuroninio tinklo schema: įvesties, paslėptieji ir išvesties sluoksniai" width="600" height="600">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Programinės įrangos inžinierius, studijuojantis dirbtinio intelekto sistemas</h2>
+            <p class="fst-italic py-3">
+              Rašau programas Python, C ir C++ kalbomis, o studijose daugiausia dėmesio skiriu dirbtiniam intelektui
+              ir didžiųjų kalbos modelių taikymui.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Gimimo data:</strong> <span>2006-08-22</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Svetainė:</strong> <span>panthare1.github.io</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Telefonas:</strong> <span>+370 655 06101</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Miestas:</strong> <span>Vilnius, Lietuva</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Amžius:</strong> <span>20</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Studijos:</strong> <span>2 kursas, VILNIUS TECH</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>El. paštas:</strong> <span>erikadamsin@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span>panthare1</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3">
+              Esu antro kurso dirbtinio intelekto sistemų inžinerijos studentas VILNIUS TECH universitete. 2026 m.
+              dalyvavau Visma dirbtinio intelekto hakatone: mūsų projektas buvo išrinktas vienu geriausių tarp pirmakursių,
+              todėl jį pristačiau Visma komandai. Esu baigęs NVIDIA kursą „Rapid Application Development with Large
+              Language Models (LLMs)“.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Įgūdžiai</h2>
+        <p>Programavimo kalbos ir įrankiai, kuriuos naudoju studijose ir projektuose</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Python</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+            <div class="progress">
+              <span class="skill"><span>C++</span> <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+            <div class="progress">
+              <span class="skill"><span>C</span> <i class="val">65%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>C#</span> <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+            <div class="progress">
+              <span class="skill"><span>HTML ir CSS</span> <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+            <div class="progress">
+              <span class="skill"><span>MATLAB</span> <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section (LD8: išsilavinimas ir darbo patirtis) -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Patirtis</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Santrauka</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Erik Adam Sinkevič</h4>
+              <p><em>Antro kurso dirbtinio intelekto sistemų inžinerijos studentas. Programuoju Python, C, C++ ir C#
+                  kalbomis, domiuosi didžiųjų kalbos modelių (LLM) taikymu ir duomenų analize.</em></p>
+              <ul>
+                <li>Plytinės g. 25, 10105 Vilnius</li>
+                <li>+370 655 06101</li>
+                <li>erikadamsin@gmail.com</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <h3 class="resume-title">Išsilavinimas</h3>
+            <div class="resume-item">
+              <h4>Dirbtinio intelekto sistemų inžinerija, bakalauro studijos</h4>
+              <h5>2025 – dabar</h5>
+              <p><em>Vilniaus Gedimino technikos universitetas (VILNIUS TECH), Vilnius</em></p>
+              <p>Šiuo metu – 2 kursas. Studijuoju programavimą, matematiką, skaitinius metodus su MATLAB ir
+                dirbtinio intelekto sistemų kūrimą.</p>
+            </div><!-- End Resume Item -->
+
+            <h3 class="resume-title">Sertifikatai</h3>
+            <div class="resume-item">
+              <h4>Rapid Application Development with Large Language Models (LLMs)</h4>
+              <h5>Baigtas kursas</h5>
+              <p><em>NVIDIA Deep Learning Institute</em></p>
+              <p>Programų, kurios naudoja didžiuosius kalbos modelius, kūrimas: modelių pasirinkimas, užklausų
+                rašymas ir LLM sujungimas su kitomis programos dalimis.</p>
+            </div><!-- End Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Projektai ir pasiekimai</h3>
+            <div class="resume-item">
+              <h4>Visma dirbtinio intelekto hakatonas</h4>
+              <h5>2026</h5>
+              <p><em>Visma, Vilnius</em></p>
+              <ul>
+                <li>Su komanda per hakatoną sukūrėme dirbtiniu intelektu paremtą projektą.</li>
+                <li>Projektas išrinktas vienu geriausių tarp pirmo kurso studentų komandų.</li>
+                <li>Sprendimą pristačiau Visma darbuotojams.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>112 skambučių duomenų analizė</h4>
+              <h5>Jupyter Notebook</h5>
+              <p><em>GitHub: panthare1/112-calls-project</em></p>
+              <ul>
+                <li>Pagalbos telefonu 112 skambučių duomenų tyrimas ir apdorojimas Python kalba.</li>
+                <li>Rezultatai pateikti Jupyter Notebook užrašuose.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <h4>Tetris žaidimas</h4>
+              <h5>Python</h5>
+              <p><em>GitHub: panthare1/tetris</em></p>
+              <ul>
+                <li>Klasikinio Tetris žaidimo versija, parašyta Python kalba.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section (LD8: MATLAB grafikai) -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Atlikti darbai</h2>
+        <p>Grafikai iš MATLAB 3 ir 4 laboratorinių darbų</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Visi</li>
+            <li data-filter=".filter-2d">2D grafikai</li>
+            <li data-filter=".filter-3d">3D paviršiai</li>
+            <li data-filter=".filter-diagram">Diagramos</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-2d">
+              <img src="assets/img/portfolio/ld3-funkcija.png" class="img-fluid" width="726" height="576" alt="MATLAB grafikas: funkcija x kubu plius tangentas x, mėlyna linija su apskritimų žymekliais">
+              <div class="portfolio-info">
+                <h4>f(x) = x³ + tan(x)</h4>
+                <p>3 LD: plot() su žymekliais, ašių ribos ir legenda</p>
+                <a href="assets/img/portfolio/ld3-funkcija.png" title="f(x) = x³ + tan(x)" data-gallery="portfolio-gallery" class="glightbox preview-link" aria-label="Padidinti: f(x) = x³ + tan(x)"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-2d">
+              <img src="assets/img/portfolio/ld3-eksponentes.png" class="img-fluid" width="712" height="576" alt="MATLAB grafikas: trys eksponentinės funkcijos raudona, žalia ir mėlyna spalvomis">
+              <div class="portfolio-info">
+                <h4>Eksponentinės funkcijos</h4>
+                <p>3 LD: eˣ, e³ˣ ir e⁵ˣ viename grafike su hold on</p>
+                <a href="assets/img/portfolio/ld3-eksponentes.png" title="Eksponentinės funkcijos" data-gallery="portfolio-gallery" class="glightbox preview-link" aria-label="Padidinti: Eksponentinės funkcijos"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-diagram">
+              <img src="assets/img/portfolio/ld3-stulpeliai.png" class="img-fluid" width="920" height="720" alt="Dvi MATLAB stulpelinės diagramos: šešių studentų keturių egzaminų balai grupuoti ir sudėti">
+              <div class="portfolio-info">
+                <h4>Egzaminų rezultatai</h4>
+                <p>3 LD: bar() grupuotame ir suminiame formate</p>
+                <a href="assets/img/portfolio/ld3-stulpeliai.png" title="Egzaminų rezultatai" data-gallery="portfolio-gallery" class="glightbox preview-link" aria-label="Padidinti: Egzaminų rezultatai"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-2d filter-diagram">
+              <img src="assets/img/portfolio/ld3-signalai.png" class="img-fluid" width="920" height="720" alt="MATLAB grafikai: pradinis ir filtruotas signalas su ribomis U1 ir U2 bei pažymėtos ribą viršijančios reikšmės">
+              <div class="portfolio-info">
+                <h4>Signalų analizė</h4>
+                <p>3 LD papildoma: filtravimo ribos, min ir max reikšmės</p>
+                <a href="assets/img/portfolio/ld3-signalai.png" title="Signalų analizė" data-gallery="portfolio-gallery" class="glightbox preview-link" aria-label="Padidinti: Signalų analizė"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-3d">
+              <img src="assets/img/portfolio/ld4-paraboloidas.png" class="img-fluid" width="569" height="572" alt="MATLAB 3D paviršius: elipsinis paraboloidas jet spalvomis">
+              <div class="portfolio-info">
+                <h4>f(x,y) = 1 − 2x² − 3y²</h4>
+                <p>4 LD: surf(), shading interp, jet spalvų paletė</p>
+                <a href="assets/img/portfolio/ld4-paraboloidas.png" title="f(x,y) = 1 − 2x² − 3y²" data-gallery="portfolio-gallery" class="glightbox preview-link" aria-label="Padidinti: f(x,y) = 1 − 2x² − 3y²"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-3d">
+              <img src="assets/img/portfolio/ld4-sinusas.png" class="img-fluid" width="603" height="572" alt="MATLAB 3D paviršius: funkcija sinusas nuo x kvadrato plius y kvadrato">
+              <div class="portfolio-info">
+                <h4>f(x,y) = sin(x² + y²)</h4>
+                <p>4 LD: meshgrid() iš atsitiktinių taškų, parula paletė</p>
+                <a href="assets/img/portfolio/ld4-sinusas.png" title="f(x,y) = sin(x² + y²)" data-gallery="portfolio-gallery" class="glightbox preview-link" aria-label="Padidinti: f(x,y) = sin(x² + y²)"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-12 portfolio-item isotope-item filter-3d">
+              <img src="assets/img/portfolio/ld4-papildoma.png" class="img-fluid" width="1177" height="465" alt="Trys MATLAB paviršiai: su apšvietimu, su kontūrais pagrinde ir paprastas paviršius">
+              <div class="portfolio-info">
+                <h4>z(x,y) = 1 − (x² + y²)</h4>
+                <p>4 LD papildoma: camlight, surfc ir surf palyginimas</p>
+                <a href="assets/img/portfolio/ld4-papildoma.png" title="z(x,y) = 1 − (x² + y²)" data-gallery="portfolio-gallery" class="glightbox preview-link" aria-label="Padidinti: z(x,y) = 1 − (x² + y²)"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Services Section (LD8: lentelė, sąrašai, medija; LD10: krovimo indikatorius, gradientinis fonas) -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Paslaugos</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <!-- LD10: dekoratyvinis CSS krovimo indikatorius (Pulsing Dots) -->
+        <div class="services-loader" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+                </svg>
+                <i class="bi bi-terminal"></i>
+              </div>
+              <h3>Python programavimas</h3>
+              <p>Programos ir skriptai, kurie automatizuoja pasikartojančius darbus ir apdoroja duomenis.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
+                </svg>
+                <i class="bi bi-cpu"></i>
+              </div>
+              <h3>DI ir LLM prototipai</h3>
+              <p>Pokalbių robotų ir kitų programų, naudojančių didžiuosius kalbos modelius, prototipai.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item item-teal position-relative">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
+                </svg>
+                <i class="bi bi-window"></i>
+              </div>
+              <h3>Tinklalapių kūrimas</h3>
+              <p>Asmeninės ir vizitinės svetainės su HTML, CSS ir JavaScript, paskelbtos GitHub Pages.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+        <!-- LD8: 4×3 lentelė (antraštinė eilutė + 3 įrašai) -->
+        <div class="services-block" data-aos="fade-up">
+          <h3 class="services-subtitle">Paslaugų kainos</h3>
+          <div class="table-responsive">
+            <table class="price-table">
+              <caption>Pagrindinių paslaugų kainos (be PVM)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Paslauga</th>
+                  <th scope="col">Aprašymas</th>
+                  <th scope="col">Kaina</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Python programavimas</td>
+                  <td>Duomenų apdorojimo ar darbų automatizavimo skriptas</td>
+                  <td>80 Eur</td>
+                </tr>
+                <tr>
+                  <td>DI ir LLM prototipai</td>
+                  <td>Pokalbių roboto prototipas su LLM API</td>
+                  <td>150 Eur</td>
+                </tr>
+                <tr>
+                  <td>Tinklalapių kūrimas</td>
+                  <td>Asmeninė ar vizitinė svetainė</td>
+                  <td>100 Eur</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- LD8: du sąrašai, viename – įdėtinis sąrašas -->
+        <div class="row gy-4 services-block" data-aos="fade-up">
+          <div class="col-lg-6">
+            <h3 class="services-subtitle">Naudojamos technologijos</h3>
+            <ul class="tech-list">
+              <li>Python
+                <ul>
+                  <li>Jupyter Notebook duomenų analizei</li>
+                  <li>LLM API pokalbių robotams</li>
+                </ul>
+              </li>
+              <li>C ir C++</li>
+              <li>C#</li>
+              <li>HTML, CSS ir JavaScript</li>
+              <li>Git ir GitHub</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="services-subtitle">Python programos kūrimo etapai</h3>
+            <ol class="steps-list">
+              <li>Užduoties ir turimų duomenų aptarimas</li>
+              <li>Sprendimo planas</li>
+              <li>Programavimas
+                <ol>
+                  <li>Duomenų nuskaitymas</li>
+                  <li>Apdorojimas ir skaičiavimai</li>
+                  <li>Rezultatų išvedimas</li>
+                </ol>
+              </li>
+              <li>Testavimas ir perdavimas užsakovui</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- LD8 papildoma: medijos įrašai -->
+        <div class="services-block" data-aos="fade-up">
+          <h3 class="services-subtitle">Medija</h3>
+          <div class="row gy-4 media-row">
+            <div class="col-lg-6">
+              <figure class="media-card">
+                <video controls muted preload="metadata" width="1280" height="720" poster="">
+                  <source src="assets/media/klaviatura.mp4" type="video/mp4">
+                  Jūsų naršyklė nepalaiko &lt;video&gt; žymės.
+                </video>
+                <figcaption>Vaizdo įrašas: rašymas kompiuterio klaviatūra (Pexels)</figcaption>
+              </figure>
+            </div>
+            <div class="col-lg-6">
+              <figure class="media-card">
+                <div class="ratio ratio-16x9">
+                  <iframe src="https://www.youtube.com/embed/BoUVIhtqjAw" title="YouTube vaizdo įrašas" loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <figcaption>YouTube vaizdo įrašas, įterptas su &lt;iframe&gt;</figcaption>
+              </figure>
+            </div>
+            <div class="col-12">
+              <figure class="media-card audio-card">
+                <audio controls preload="metadata">
+                  <source src="assets/media/laikrodis.mp3" type="audio/mpeg">
+                  Jūsų naršyklė nepalaiko &lt;audio&gt; žymės.
+                </audio>
+                <figcaption>Garso įrašas: kvarcinio laikrodžio tiksėjimas, 1 min. (Pixabay)</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- LD12: vartotojo kompetencijų pažangos modulis -->
+    <section id="progress" class="progress-module section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pažanga</h2>
+        <p>Pakeiskite įgūdžio būseną, ir patirtis, lygis bei pasiekimai persiskaičiuos</p>
+      </div>
+
+      <div class="container">
+
+        <!-- Profilio suvestinė: ikonėlė, XP, lygis, rangas, progreso juosta, statistika -->
+        <div class="pm-summary" data-aos="fade-up">
+          <div class="pm-avatar-wrap">
+            <img id="pmAvatar" src="assets/img/avatar-lygis-1.svg" alt="Vartotojo ikonėlė – 1 lygis" width="140" height="140">
+          </div>
+
+          <div class="pm-info">
+            <div class="pm-badges">
+              <div class="pm-badge"><span class="pm-label">Patirtis</span><strong id="pmXp">0 XP</strong></div>
+              <div class="pm-badge"><span class="pm-label">Lygis</span><strong id="pmLevel">1</strong></div>
+              <div class="pm-badge"><span class="pm-label">Rangas</span><strong id="pmRank">Pradedantysis</strong></div>
+            </div>
+
+            <div class="pm-progress">
+              <div class="pm-progress-head">
+                <span id="pmProgressLabel">0 / 50 XP iki 2 lygio</span>
+                <span id="pmProgressPct">0%</span>
+              </div>
+              <div class="pm-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="pmProgressBar">
+                <div class="pm-progress-fill" id="pmProgressFill"></div>
+              </div>
+            </div>
+
+            <div class="pm-stats">
+              <div><span class="pm-label">Iš viso įgūdžių</span><strong id="pmTotal">0</strong></div>
+              <div><span class="pm-label">Atlikta</span><strong id="pmDone">0</strong></div>
+              <div><span class="pm-label">Atlikta, %</span><strong id="pmDonePct">0%</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanban lenta: stulpeliai ir kortelės generuojami JavaScript kalba -->
+        <div class="pm-board" id="pmBoard" data-aos="fade-up"></div>
+
+        <!-- LD12 papildoma: pasiekimai (kortelės generuojamos JavaScript kalba) -->
+        <h3 class="services-subtitle pm-subtitle">Pasiekimai</h3>
+        <div class="pm-achievements" id="pmAchievements"></div>
+
+        <div class="text-center mt-4">
+          <button type="button" class="btn-outline" id="pmReset"><i class="bi bi-arrow-counterclockwise"></i> Atkurti pradinę būseną</button>
+        </div>
+
+      </div>
+    </section><!-- /Progress Module -->
+
+    <!-- Contact Section (LD11: JavaScript forma) -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kontaktai</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Adresas</h3>
+                <p>Plytinės g. 25, 10105 Vilnius</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Telefonas</h3>
+                <p>+370 655 06101</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>El. paštas</h3>
+                <p>erikadamsin@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <!-- Klasė php-email-form pašalinta, kad šablono validate.js neperimtų formos pateikimo -->
+            <form id="contactForm" class="contact-form" novalidate data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-3">
+
+                <div class="col-md-6 form-field">
+                  <label for="fName" class="form-label">Vardas</label>
+                  <input type="text" id="fName" name="vardas" class="form-control" placeholder="Vardas" autocomplete="given-name" required>
+                  <small class="field-error" id="fName-error"></small>
+                </div>
+
+                <div class="col-md-6 form-field">
+                  <label for="fSurname" class="form-label">Pavardė</label>
+                  <input type="text" id="fSurname" name="pavarde" class="form-control" placeholder="Pavardė" autocomplete="family-name" required>
+                  <small class="field-error" id="fSurname-error"></small>
+                </div>
+
+                <div class="col-md-6 form-field">
+                  <label for="fEmail" class="form-label">El. paštas</label>
+                  <input type="email" id="fEmail" name="elPastas" class="form-control" placeholder="vardas@pastas.lt" autocomplete="email" required>
+                  <small class="field-error" id="fEmail-error"></small>
+                </div>
+
+                <div class="col-md-6 form-field">
+                  <label for="fPhone" class="form-label">Telefono numeris</label>
+                  <input type="tel" id="fPhone" name="telefonas" class="form-control" placeholder="+370 6xx xxxxx" inputmode="numeric" autocomplete="tel" required>
+                  <small class="field-error" id="fPhone-error"></small>
+                </div>
+
+                <div class="col-12 form-field">
+                  <label for="fAddress" class="form-label">Adresas</label>
+                  <input type="text" id="fAddress" name="adresas" class="form-control" placeholder="Gatvė, namo nr., miestas" autocomplete="street-address" required>
+                  <small class="field-error" id="fAddress-error"></small>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="rating-group">
+                    <legend>Įvertinkite nuo 1 iki 10</legend>
+                    <div class="row gy-3">
+                      <div class="col-md-4 form-field">
+                        <label for="fQ1" class="form-label">1. Kaip vertinate svetainės dizainą?</label>
+                        <input type="number" id="fQ1" name="klausimas1" class="form-control" min="1" max="10" step="1" placeholder="1–10" required>
+                        <small class="field-error" id="fQ1-error"></small>
+                      </div>
+                      <div class="col-md-4 form-field">
+                        <label for="fQ2" class="form-label">2. Ar informacija pateikta aiškiai?</label>
+                        <input type="number" id="fQ2" name="klausimas2" class="form-control" min="1" max="10" step="1" placeholder="1–10" required>
+                        <small class="field-error" id="fQ2-error"></small>
+                      </div>
+                      <div class="col-md-4 form-field">
+                        <label for="fQ3" class="form-label">3. Ar rekomenduotumėte mane kitiems?</label>
+                        <input type="number" id="fQ3" name="klausimas3" class="form-control" min="1" max="10" step="1" placeholder="1–10" required>
+                        <small class="field-error" id="fQ3-error"></small>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="col-12 text-center form-buttons">
+                  <button type="submit" id="submitBtn" disabled>Siųsti</button>
+                  <button type="button" id="clearBtn" class="btn-outline">Išvalyti</button>
+                </div>
+
+              </div>
+            </form>
+
+            <!-- Pateikti duomenys ir vidurkis -->
+            <div id="formResult" class="form-result" aria-live="polite" hidden>
+              <h3>Pateikti duomenys</h3>
+              <div id="formResultData"></div>
+              <p id="formAverage" class="form-average"></p>
+            </div>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <h3 class="sitename">Erik Adam Sinkevič</h3>
+      <p>Programinės įrangos inžinierius, dirbtinio intelekto sistemų studentas.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/panthare1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/erik-adam-91425b404/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:erikadamsin@gmail.com" aria-label="El. paštas"><i class="bi bi-envelope"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>©</span> <strong class="px-1 sitename">Erik Adam Sinkevič</strong> <span>Visos teisės saugomos</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Į viršų"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- LD11: kontaktų formos logika -->
+  <script src="assets/js/custom.js"></script>
+  <!-- LD12: kompetencijų pažangos modulis -->
+  <script src="assets/js/skills.js"></script>
+
+</body>
+
+</html>
